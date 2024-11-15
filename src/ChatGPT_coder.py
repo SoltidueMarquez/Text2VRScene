@@ -13,6 +13,7 @@ import token_counter
 from assets_generator import  shape_models_generator
 from skybox_generator import skybox_generator
 
+openai.api_base = "https://api.gpt.ge/v1"
 def attempt_to_fix_json_by_finding_outermost_brackets(json_string):
 
     try:

@@ -33,7 +33,7 @@ if __name__ == "__main__":
         "--openai_key",
         type=str,
         nargs="?",
-        default="<Your OpenAI API Key>",
+        default="sk-5FRioxbHWVzdnEhlA4Bb41De975e490f9a8dB47c36262886",
         help="openai api key"
     )
     parser.add_argument(
@@ -47,21 +47,21 @@ if __name__ == "__main__":
         "--shape_dir",
         type=str,
         nargs="?",
-        default="/home/zyin/shap-e",
+        default="D:/DeskTop/毕设/Shap-E",
         help="path of shap-e folder in remote machine"
     )
     parser.add_argument(
         "--python_dir",
         type=str,
         nargs="?",
-        default="/home/zyin/anaconda3/envs/shap-e/bin/python",
+        default="D:/PROGRAMME/Anaconda/envs/shap-e/bin/python",
         help="path of configured python environment in remote machine"
     )
     parser.add_argument(
         "--blender_dir",
         type=str,
         nargs="?",
-        default="~/blender/blender",
+        default="D:/TOOLS/blender-3.5.1-windows-x64",
         help="path of blender in remote machine"
     )
     opt = parser.parse_args()
