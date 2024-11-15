@@ -54,7 +54,7 @@ if __name__ == "__main__":
         "--python_dir",
         type=str,
         nargs="?",
-        default="D:/PROGRAMME/Anaconda/envs/shap-e/bin/python",# 这边不对，要在shape-e里配置
+        default="D:/PROGRAMME/Anaconda/envs/shap-e/bin/python", # 这边不对，要在conda里配置shape-e
         help="path of configured python environment in remote machine"
     )
     parser.add_argument(
