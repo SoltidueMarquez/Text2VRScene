@@ -47,14 +47,14 @@ if __name__ == "__main__":
         "--shape_dir",
         type=str,
         nargs="?",
-        default="D:/DeskTop/毕设/Shap-E",
+        default="D:/DeskTop/EndWork/shap-e",
         help="path of shap-e folder in remote machine"
     )
     parser.add_argument(
         "--python_dir",
         type=str,
         nargs="?",
-        default="D:/PROGRAMME/Anaconda/envs/shap-e/bin/python",
+        default="D:/PROGRAMME/Anaconda/envs/shap-e/bin/python",# 这边不对，要在shape-e里配置
         help="path of configured python environment in remote machine"
     )
     parser.add_argument(
