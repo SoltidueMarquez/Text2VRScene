@@ -40,28 +40,28 @@ if __name__ == "__main__":
         "--skybox_key",
         type=str,
         nargs="?",
-        default="<Your API Key in Skybox AI of Blockade Labs>",
+        default="1QIF7ouzzbkRGcnXe1XAtABVy6b5c28brOLsOgY3UgUJV4hmYJy0rSkJn9ZR",
         help="skybox api key"
     )
     parser.add_argument(
         "--shape_dir",
         type=str,
         nargs="?",
-        default="D:/DeskTop/EndWork/shap-e",
+        default="D:/DeskTop/EndWork/shap-e/",
         help="path of shap-e folder in remote machine"
     )
     parser.add_argument(
         "--python_dir",
         type=str,
         nargs="?",
-        default="D:/PROGRAMME/Anaconda/envs/shap-e/bin/python", # 这边不对，要在conda里配置shape-e
+        default="D:/PROGRAMME/Anaconda/envs/text2vr", # 这边不对，要在conda里配置shape-e
         help="path of configured python environment in remote machine"
     )
     parser.add_argument(
         "--blender_dir",
         type=str,
         nargs="?",
-        default="D:/TOOLS/blender-3.5.1-windows-x64",
+        default="D:/TOOLS/blender-3.5.1-windows-x64/blender.exe",
         help="path of blender in remote machine"
     )
     opt = parser.parse_args()

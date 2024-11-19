@@ -203,7 +203,7 @@ def ChatGPT_coder(hist_messages, opt, is_test):
             print("Submit prompt")
             try:
                 response = openai.ChatCompletion.create(
-                  model="gpt-4",
+                  model="gpt-4o",
                   messages = cur_prompt,
                   temperature = 0,
                   timeout=10,
@@ -251,7 +251,7 @@ def ChatGPT_coder(hist_messages, opt, is_test):
                                 indiv_path = "./tmp_file/" + str(literature) + "/" + str(path)
                                 if not os.path.exists('/'.join(indiv_path.split('/')[:-1])):
                                     os.makedirs('/'.join(indiv_path.split('/')[:-1]))
-                                os.system("cp " + local_path + " " + indiv_path)
+                                os.system("copy " + local_path + " " + indiv_path)
 
             elif cur_step == 3:
                 scale = str(parsed_json["responses"]["scale"])

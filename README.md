@@ -14,7 +14,7 @@ Install the conda package manager from https://docs.conda.io/en/latest/miniconda
 cd src
 conda create -n text2vr python=3.10
 conda activate text2vr
-pip install openai=0.28 tiktoken
+pip install openai==0.28 tiktoken
 ```
 
 ## Step 2: Configuring 3D model generator in Virtual Env
@@ -33,7 +33,7 @@ pip install -e .
 **Move the downloaded 2gltf2.py file into shap-e/space**
 
 ```shell
-mv <path to 2gltf2>/2gltf2.py shap-e/space
+mv C:/Users/Maugham/Downloads/2gltf2.py shap-e/space
 ```
 
 ## Step 3: Configuring OpenAI API
