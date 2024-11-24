@@ -6,7 +6,6 @@ Data: 07/04/2023
 import os
 
 def shape_models_generator(opt, filepath, description):
-
     print("Generating " + str(filepath))
     # 3D model generation
     local_path = "./tmp_file/"+str(filepath)
@@ -22,7 +21,7 @@ def shape_models_generator(opt, filepath, description):
     os.system(cmd0)
 
     # 激活环境并执行命令
-    activate_cmd = r'D:/PROGRAMME/Anaconda/Scripts/activate text2vr'
+    activate_cmd = r'D:/PROGRAMME/Anaconda/Scripts/activate shap-e'
     generate_cmd = f'python "{workspace_dir}/generate_model.py" --prompt "{description}"'
     full_cmd = f'cmd /c "{activate_cmd} & {generate_cmd}"'
     print(full_cmd)

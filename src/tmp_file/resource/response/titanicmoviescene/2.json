@@ -1,0 +1,12 @@
+```json
+{
+    "responses": {
+        "models": {
+            "resource/models/Rose.gltf": "Rose, a young woman with flowing auburn hair, dressed in an elegant ivory evening gown with intricate lacework.",
+            "resource/models/Jack.gltf": "Jack, a spirited young man with tousled brown hair, wearing a simple white shirt and dark trousers, with rugged boots.",
+            "resource/models/Titanic.gltf": "The Titanic is a grand and majestic ship painted in black and white with towering red funnels and numerous windows along its expansive decks.",
+            "resource/models/Iceberg.gltf": "An iceberg, glistening with hues of blue and white, with jagged edges and a rough icy surface, towering and impressive."
+        }
+    }
+}
+```

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>VR Scene</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene renderer="colorManagement: true;">
+    <!-- Ambient Light -->
+    <a-entity light="type: ambient; color: #BBB; intensity: 1"></a-entity>
+
+    <!-- Directional Lights -->
+    <a-entity light="type: directional; color: #FFF; intensity: 3; castShadow: false" position="-100 0 0"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 3; castShadow: false" position="100 0 0"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 3; castShadow: false" position="0 100 0"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 3; castShadow: false" position="0 -100 0"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 3; castShadow: false" position="0 0 -100"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 3; castShadow: false" position="0 0 100"></a-entity>
+
+    <!-- Sky -->
+    <a-sky src="../resource/images/skybox.jpg"></a-sky>
+
+    <!-- Camera Rig -->
+    <a-entity id="rig" position="-2 0 2">
+      <a-camera id="camera" position="0 0 0" look-controls="pointerLockEnabled: true">
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-entity>
+
+    <!-- Titanic, Jack, and Rose Group -->
+    <a-entity id="titanic-group" position="-20 0 -80" rotation="0 90 0" animation="property: position; to: 50 0 -80; dur: 10000; easing: linear; loop: true">
+      <!-- Titanic -->
+      <a-entity gltf-model="../resource/models/Titanic.gltf" scale="10 10 10"></a-entity>
+
+      <!-- Rose -->
+      <a-entity gltf-model="../resource/models/Rose.gltf"
+                scale="0.1 0.1 0.1"
+                position="0 -0.8 8"></a-entity>
+
+      <!-- Jack -->
+      <a-entity gltf-model="../resource/models/Jack.gltf"
+                scale="0.1 0.1 0.1"
+                position="0 -0.8 8.1"></a-entity>w
+    </a-entity>
+
+    <!-- Iceberg -->
+    <a-entity gltf-model="../resource/models/Iceberg.gltf"
+              scale="50 20 50"
+              position="0 0 -65">
+              <!--animation="property: position; to: 30 5 -115; dur: 10000; easing: linear; loop: true"-->
+    </a-entity>
+  </a-scene>
+</body>
+</html>

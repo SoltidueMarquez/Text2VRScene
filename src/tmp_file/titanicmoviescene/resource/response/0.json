@@ -1,0 +1,15 @@
+```json
+{
+    "responses": {
+        "topic": "Titanic Movie Scene",
+        "description": {
+            "background": "The cold night sky is sprinkled with stars, casting a faint glow over the expansive Atlantic Ocean. The air is brisk, and the gentle waves shimmer under the moonlight.",
+            "characters": "Rose, a young woman with flowing auburn hair, is dressed in an elegant ivory evening gown. Jack, a spirited young man with tousled brown hair, wears a simple white shirt and dark trousers. They both appear determined yet serene.",
+            "objects": "The Titanic, a grand and majestic ship painted in black and white with towering red funnels, sails across the waters. An iceberg, glistening with hues of blue and white, looms ominously in the distance.",
+            "scale": "The Titanic is colossal, dwarfing the figures of Jack and Rose on its deck. The iceberg is larger than the Titanic, menacing in its grandeur.",
+            "start position": "Jack and Rose are positioned at the bow of the Titanic, leaning over the rail. The Titanic is progressing steadily from the left side of the scene, heading towards the iceberg situated far ahead in the distance.",
+            "movements": "The Titanic is advancing majestically from left to right, cutting through the ocean towards the iceberg. Jack and Rose, initially motionless, transition into an embrace, their forms silhouetted against the vast expanse. The iceberg remains stationary at first, later revealing its hidden mass below the waterline as the Titanic continues its approach."
+        }
+    }
+}
+```
