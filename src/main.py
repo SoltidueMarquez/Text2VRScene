@@ -1,8 +1,3 @@
-'''
-Author: William Zhizhuo Yin
-Data: 07/04/2023
-'''
-
 from ChatGPT_coder import ChatGPT_coder
 from experience_generator import experience_generator
 import argparse
@@ -26,7 +21,7 @@ if __name__ == "__main__":
         "--prompt",
         type=str,
         nargs="?",
-        default="generate the scene of the movie the Titanic",
+        default="generate the scene of a spaceship traveling in space (no one appears in the scene)",
         help="the prompt to render"
     )
     parser.add_argument(
@@ -40,7 +35,7 @@ if __name__ == "__main__":
         "--skybox_key",
         type=str,
         nargs="?",
-        default="1QIF7ouzzbkRGcnXe1XAtABVy6b5c28brOLsOgY3UgUJV4hmYJy0rSkJn9ZR",
+        default="sk-5FRioxbHWVzdnEhlA4Bb41De975e490f9a8dB47c36262886",
         help="skybox api key"
     )
     parser.add_argument(

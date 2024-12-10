@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head>  <meta charset="utf-8">
+    <title>VR Scene</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js">
+
+    </script></head><body>
+<a-scene renderer="colorManagement: true;">
+    <a-entity light="type: ambient; color: #BBB; intensity:1"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="-100 0 0"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="100 0 0"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="0 100 0"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="0 -100 0"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="0 0 -100"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="0 0 100"></a-entity>
+    <a-sky src="../resource/images/generated_00.png"></a-sky>
+    <a-entity id="rig" position="-2 0 2">
+        <a-camera id="camera" position="0 0 0" look-controls="pointerLockEnabled:true">
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-entity>
+    <a-entity gltf-model="../resource/models/spaceship.gltf" rotation = "0 90 0" scale="10 8 10" position="-50 0 -45" animation="property: position; to: 50 0 -45; easing: linear; dur: 10000; loop: true"></a-entity>
+</a-scene></body></html>

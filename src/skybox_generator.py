@@ -1,67 +1,102 @@
-'''
-Author: William Zhizhuo Yin
-Data: 07/04/2023
-'''
-
 import argparse
-import os
-import time
+import http.client
+import json
+import requests
+from tqdm import tqdm
+from requests.adapters import HTTPAdapter
+from urllib3 import Retry
+
 
 def skybox_generator(apikey, prompt, literature):
-    # import urllib.parse
-    # import urllib.request
-    # from urllib.request import urlretrieve
-    # import requests
-    # import json
-    #
-    # url = "https://backend.blockadelabs.com/api/v1/skybox"
-    # request = {'prompt': prompt, 'skybox_style_id':5}
-    # header = {"x-api-key": apikey}
-    # post_param = urllib.parse.urlencode(request).encode('UTF-8')
-    # req = urllib.request.Request(url, post_param, header)
-    # styles = requests.get("https://backend.blockadelabs.com/api/v1/skybox/styles", headers=header)
-    # response = urllib.request.urlopen(req)
-    #
-    # response = json.loads(response.read().decode())
-    # time.sleep(30)
-    # download_url = "https://backend.blockadelabs.com/api/v1/imagine/requests/"+str(response['id'])
-    # contents = requests.get(download_url, headers=header).content.decode()#urllib.request.urlopen(download_url).read()
-    # file_url = json.loads(contents)['request']['file_url']
-    # skybox_file = "/skybox.jpg"
-    # skybox_filepath = "./tmp_file/resource/images"
-    # if not os.path.exists(skybox_filepath):
-    #     os.makedirs(skybox_filepath)
-    # output_filepath = "./tmp_file/resource/images/" + literature + ".jpg"
-    # indiv_filepath = "./tmp_file/" + str(literature) + "/resource/images"
-    # if not os.path.exists(indiv_filepath):
-    #     os.makedirs(indiv_filepath)
-    #
-    # urlretrieve(file_url, skybox_filepath+skybox_file)
-    #
-    # os.system("cp " + skybox_filepath+skybox_file + " " + output_filepath)
-    # os.system("cp " + skybox_filepath+skybox_file + " " + indiv_filepath+skybox_file)
+    """
+    使用 OpenAI 的 API 生成天空盒图片并保存到指定路径。
+
+    参数：
+        apikey (str): API 密钥。
+        prompt (str): 生成图片的提示文本。
+        literature (str): 保存图片的文件名。
+    """
+    try:
+        # 设置API连接
+        conn = http.client.HTTPSConnection("api.gpt.ge")
+
+        # 构建请求的载荷
+        payload = json.dumps({
+            "model": "dall-e-3",
+            "prompt": prompt,
+            "n": 1,
+            "size": "1792x1024"
+        })
+
+        # 设置请求头
+        headers = {
+            'Content-Type': 'application/json',
+            'Authorization': f'Bearer {apikey}'
+        }
+
+        # 发出请求
+        conn.request("POST", "/v1/images/generations", payload, headers)
+
+        # 获取响应
+        res = conn.getresponse()
+        data = res.read()
+
+        # 解析响应
+        response_json = json.loads(data.decode("utf-8"))
+
+        # 检查响应是否包含图片数据
+        if 'data' in response_json and len(response_json['data']) > 0:
+            # 获取图片的 URL
+            image_url = response_json['data'][0]['url']
+            print(f"图片URL: {image_url}")
+
+            # 下载图片并保存
+            session = requests.Session()
+            retries = Retry(total=5, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
+            session.mount('http://', HTTPAdapter(max_retries=retries))
+            session.mount('https://', HTTPAdapter(max_retries=retries))
+
+            with session.get(image_url, stream=True, timeout=10) as response:
+                total_size = int(response.headers.get('content-length', 0))
+                block_size = 1024
+                progress_bar = tqdm(total=total_size, unit='B', unit_scale=True, desc="Downloading")
+
+                save_path = f"D://DeskTop//EndWork//Text2VRScene//src//tmp_file//resource//images//{literature}.png"
+
+                with open(save_path, "wb") as f:
+                    for data in response.iter_content(block_size):
+                        progress_bar.update(len(data))
+                        f.write(data)
+                progress_bar.close()
+
+            print(f"图片已保存到 {literature}")
+        else:
+            print("未生成图片或响应中没有图片数据")
+
+    except requests.exceptions.RequestException as e:
+        print(f"下载图片时发生错误: {e}")
+    except Exception as e:
+        print(f"发生错误: {e}")
 
     return True
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--apikey",
         type=str,
         nargs="?",
-        default="<apikey>",
-        help="apikey of skybox generation"
+        default="sk-5FRioxbHWVzdnEhlA4Bb41De975e490f9a8dB47c36262886",
+        help="API key for skybox generation"
     )
     parser.add_argument(
         "--prompt",
         type=str,
         nargs="?",
         default="a professional photograph of an astronaut riding a triceratops",
-        help="the prompt to render"
+        help="The prompt to render"
     )
     opt = parser.parse_args()
-    opt.prompt = "In the middle of dissert with shiny sun"
+    opt.prompt = "In the middle of desert with shiny sun"
     skybox_generator(opt.apikey, opt.prompt, "madmax")
-
-

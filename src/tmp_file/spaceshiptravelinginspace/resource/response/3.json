@@ -1,0 +1,12 @@
+```json
+{
+    "responses": {
+        "reason": {
+            "resource/models/spaceship.gltf": "The spaceship is described as relatively small compared to the vastness of space but is still much larger than a human. A typical small shuttle or spaceship might be around 15-20 meters in length. For the purpose of scaling, the size is determined based on its realistic dimensions."
+        },
+        "scale": {
+            "resource/models/spaceship.gltf": "10 3 20"
+        }
+    }
+}
+```
