@@ -231,7 +231,7 @@ def ChatGPT_coder(hist_messages, opt, is_test):
                 key = parsed_json["responses"].keys()
                 skybox_desc = parsed_json["responses"]["skyboxprompt"]
                 skybox = skybox_desc
-                if False:
+                if True:
                     if not os.path.exists("./tmp_file/" + str(literature)+ "/resource/images/"):
                         os.makedirs("./tmp_file/" + str(literature) + "/resource/images/")
                     print("generating skybox")

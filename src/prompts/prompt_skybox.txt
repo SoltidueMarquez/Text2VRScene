@@ -16,8 +16,7 @@ RESPONSE FORMAT:
     "responses":
     {
         "background": "short and precise description about the background, without any storytelling. If the background is indoor, first shortly mention the outdoor environment, then describe the decoration in detail."
-        "skyboxprompt": "The ground of <background>, or The surface of <background>, or The middle of <background>, etc."
-
+        "skyboxprompt": "The ground of <background>, or The surface of <background>, or The middle of <background>, and It is necessary to ensure that the connection between the leftmost and rightmost sides of the image is coherent, etc."
     }
 }
 
