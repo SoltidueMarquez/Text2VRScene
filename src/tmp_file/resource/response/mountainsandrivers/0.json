@@ -1,0 +1,15 @@
+```json
+{
+    "responses": {
+        "topic": "Mountains and rivers",
+        "description": {
+            "background": "A serene landscape with towering mountains covered in lush greenery, and a winding river reflecting the clear blue sky.",
+            "characters": "None",
+            "objects": "The mountains are majestic, with peaks that reach high into the sky, covered in dense forests of deep green. The river is wide and gently flowing, its surface shimmering with the reflection of the sun.",
+            "scale": "The mountains are enormous, dwarfing the river below, which appears as a thin ribbon of blue winding through the valley.",
+            "start position": "The mountains stand tall in the background, forming a natural barrier, while the river begins at the base of the mountains, snaking its way through the valley.",
+            "movements": "The river flows steadily from the base of the mountains, meandering through the valley, its path curving gently as it moves from left to right across the scene."
+        }
+    }
+}
+```

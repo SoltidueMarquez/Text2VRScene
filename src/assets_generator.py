@@ -14,18 +14,28 @@ def shape_models_generator(opt, filepath, description):
     # 切换到 UTF-8 编码
     os.system("chcp 65001")
 
-    # 确保路径拼接正确
+    # # 确保路径拼接正确
     workspace_dir = os.path.join(opt.shape_dir, "space")
     cmd0 = f'cd /d "{workspace_dir}"'
     print(cmd0)
     os.system(cmd0)
 
-    # 激活环境并执行命令
-    activate_cmd = r'D:/PROGRAMME/Anaconda/Scripts/activate shap-e'
-    generate_cmd = f'python "{workspace_dir}/generate_model.py" --prompt "{description}"'
-    full_cmd = f'cmd /c "{activate_cmd} & {generate_cmd}"'
-    print(full_cmd)
-    os.system(full_cmd)
+    cmd = opt.python_dir + f" {workspace_dir}\\generate_model.py --prompt \"" + str(description) + \
+          "\""
+    # cmd = opt.python_dir + f" {workspace_dir}\\Test2.py --prompt \"" + str(description) + \
+    #       "\""
+    print(cmd)
+    os.system(cmd)
+
+    # # 激活环境并执行命令
+    # python_exe = r"D:\PROGRAMME\Anaconda\envs\shap-e\python.exe"
+    # script_path = os.path.join(workspace_dir, "generate_model.py")
+    # # 构建执行命令
+    # generate_cmd = f'"{python_exe}" "{script_path}" --prompt "{description}"'
+    #
+    # # 执行命令
+    # print(f"执行命令: {generate_cmd}")
+    # os.system(generate_cmd)
 
     # 调用 Blender 脚本
     cmd2 = f'{opt.blender_dir} -b -P 2gltf2.py -- mesh.ply'
@@ -57,7 +67,7 @@ if __name__ == "__main__":
         "--prompt",
         type=str,
         nargs="?",
-        default="generate the scene of the movie the Titanic",
+        default="generate the scene of Mountains with towering peaks covered in dense forests of deep green.",
         help="the prompt to render"
     )
     parser.add_argument(
@@ -85,7 +95,7 @@ if __name__ == "__main__":
         "--python_dir",
         type=str,
         nargs="?",
-        default="D:/PROGRAMME/Anaconda/envs/text2vr",
+        default="D:\PROGRAMME\Anaconda\envs\shap-e\python.exe",
         help="path of configured python environment in remote machine"
     )
     parser.add_argument(
@@ -97,6 +107,7 @@ if __name__ == "__main__":
     )
     opt = parser.parse_args()
 
-    prompt = "a woman with long curly hair wearing a light blue dress"
-    filepath = "resource/models/Rose.gltf"
+    prompt = "Mountains with towering peaks covered in dense forests of deep green."
+    # 还需要一个飞鸟和大的陆地
+    filepath = "resource/models/Mountain2.gltf"
     shape_models_generator(opt, filepath, prompt)

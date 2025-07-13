@@ -1,0 +1,11 @@
+```json
+{
+    "responses": {
+        "explanation": {
+            "resource/models/mountains.gltf": "The mountains are stationary and majestic, forming a natural barrier in the background. No animation is added as they are meant to be static.",
+            "resource/models/river.gltf": "The river flows steadily from the base of the mountains, meandering through the valley. The animation attribute is added to simulate the river's gentle flow from left to right across the scene, looping continuously to provide a sense of movement."
+        },
+        "html code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>VR Scene</title>\n  <script src=\"https://aframe.io/releases/1.4.0/aframe.min.js\"></script>\n</head>\n<body>\n  <a-scene renderer=\"colorManagement: true;\">\n    <a-entity light=\"type: ambient; color: #BBB; intensity:1\"></a-entity>\n    <a-entity light=\"type: directional; color: #FFF; intensity:3;castShadow:false\" position=\"-100 0 0\"></a-entity>\n    <a-entity light=\"type: directional; color: #FFF; intensity:3;castShadow:false\" position=\"100 0 0\"></a-entity>\n    <a-entity light=\"type: directional; color: #FFF; intensity:3;castShadow:false\" position=\"0 100 0\"></a-entity>\n    <a-entity light=\"type: directional; color: #FFF; intensity:3;castShadow:false\" position=\"0 -100 0\"></a-entity>\n    <a-entity light=\"type: directional; color: #FFF; intensity:3;castShadow:false\" position=\"0 0 -100\"></a-entity>\n    <a-entity light=\"type: directional; color: #FFF; intensity:3;castShadow:false\" position=\"0 0 100\"></a-entity>\n    <a-sky src=\"../resource/images/skybox.jpg\"></a-sky>\n    <a-entity id=\"rig\" position=\"-2 0 2\">\n      <a-camera id=\"camera\" position=\"0 0 0\" look-controls=\"pointerLockEnabled:true\">\n        <a-cursor></a-cursor>\n      </a-camera>\n    </a-entity>\n    <a-entity gltf-model=\"resource/models/mountains.gltf\" scale=\"1000 1000 1000\" position=\"0 50 -100\"></a-entity>\n    <a-entity gltf-model=\"resource/models/river.gltf\" scale=\"100 1 100\" position=\"0 0 -50\" animation=\"property: position; to: 10 0 -50; dur: 10000; easing: linear; loop: true\"></a-entity>\n  </a-scene>\n</body>\n</html>"
+    }
+}
+```

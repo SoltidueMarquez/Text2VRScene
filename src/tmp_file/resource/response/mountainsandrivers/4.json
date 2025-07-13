@@ -1,0 +1,15 @@
+```json
+{
+    "responses": {
+        "reason for position": {
+            "resource/models/mountains.gltf": "The mountains are positioned in the background, forming a natural barrier, so they are placed far from the observer with a negative y value.",
+            "resource/models/river.gltf": "The river starts at the base of the mountains and flows through the valley, so it is positioned closer to the observer but still in front of the mountains."
+        },
+        "position": {
+            "resource/models/mountains.gltf": "0 50 -100",
+            "resource/models/river.gltf": "0 0 -50"
+        },
+        "explaination": "The mountains are placed far in the background to represent their towering presence and avoid overlapping with the river. The river is positioned closer to the observer, starting at the base of the mountains and flowing through the valley."
+    }
+}
+```

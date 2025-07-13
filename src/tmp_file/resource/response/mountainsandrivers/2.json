@@ -1,0 +1,10 @@
+```json
+{
+    "responses": {
+        "models": {
+            "resource/models/mountains.gltf": "Mountains with towering peaks covered in dense forests of deep green.",
+            "resource/models/river.gltf": "River wide and gently flowing, with a shimmering surface reflecting the sun."
+        }
+    }
+}
+```

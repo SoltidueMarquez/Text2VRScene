@@ -21,7 +21,7 @@ if __name__ == "__main__":
         "--prompt",
         type=str,
         nargs="?",
-        default="generate the scene of a spaceship traveling in space (no one appears in the scene)",
+        default="generate the scene of Mountains and rivers (no one appears in the scene)",
         help="the prompt to render"
     )
     parser.add_argument(
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         "--python_dir",
         type=str,
         nargs="?",
-        default="D:/PROGRAMME/Anaconda/envs/text2vr", # 这边不对，要在conda里配置shape-e
+        default="D:\PROGRAMME\Anaconda\envs\shap-e\python.exe", # 这边不对，要在conda里配置shape-e
         help="path of configured python environment in remote machine"
     )
     parser.add_argument(

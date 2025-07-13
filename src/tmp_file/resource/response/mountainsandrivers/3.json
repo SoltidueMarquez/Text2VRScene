@@ -1,0 +1,14 @@
+```json
+{
+    "responses": {
+        "reason": {
+            "resource/models/mountains.gltf": "Mountains are enormous in reality, often thousands of meters tall, so they are scaled much larger than a human.",
+            "resource/models/river.gltf": "Rivers are wide and long, but not as tall as mountains, so they are scaled larger than a human but smaller than mountains."
+        },
+        "scale": {
+            "resource/models/mountains.gltf": "1000 1000 1000",
+            "resource/models/river.gltf": "100 1 100"
+        }
+    }
+}
+```
