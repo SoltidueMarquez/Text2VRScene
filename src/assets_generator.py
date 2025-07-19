@@ -107,7 +107,6 @@ if __name__ == "__main__":
     )
     opt = parser.parse_args()
 
-    prompt = "Mountains with towering peaks covered in dense forests of deep green."
-    # 还需要一个飞鸟和大的陆地
-    filepath = "resource/models/Mountain2.gltf"
+    prompt = "Silhouette of a large raptor soaring effortlessly, its wingtips splayed wide to catch unseen thermals."
+    filepath = "resource/models/Bird.gltf"
     shape_models_generator(opt, filepath, prompt)

@@ -29,15 +29,8 @@
     </a-entity>
 
     <!-- Titanic, Jack, and Rose Group -->
-    <a-entity id="titanic-group" position="-20 0 -80" rotation="0 90 0" animation="property: position; to: 50 0 -80; dur: 10000; easing: linear; loop: true">
-      <!-- Titanic -->
-
-
-      <!-- Rose -->
-
-
-      <!-- Jack -->
-
+    <a-entity id="Bird-group" position="-20 50 -80" rotation="0 90 0" animation="property: position; to: 50 50 -80; dur: 10000; easing: linear; loop: true">
+      <a-entity gltf-model="../mountainsandrivers/resource/models/Bird.gltf" scale="5 5 5s"></a-entity>
     </a-entity>
 
     <!-- Mountain -->
@@ -50,6 +43,12 @@
     <a-entity gltf-model="../mountainsandrivers/resource/models/Mountain2.gltf"
               scale="50 20 50"
               position="0 0 50">
+              <!--animation="property: position; to: 30 5 -115; dur: 10000; easing: linear; loop: true"-->
+    </a-entity>
+
+    <a-entity gltf-model="../mountainsandrivers/resource/models/Ground.gltf"
+              scale="500 20 500"
+              position="0 -5 0">
               <!--animation="property: position; to: 30 5 -115; dur: 10000; easing: linear; loop: true"-->
     </a-entity>
   </a-scene>
